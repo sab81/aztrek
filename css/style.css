@@ -1,0 +1,222 @@
+body, html {
+  background-color: #15b493;
+  height: 100%;
+  color: #FFf;
+  text-align: center;
+  font-family: sans-serif; }
+
+.menu-icon {
+  margin: 25px auto; }
+
+.menu-icon {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%; }
+  .menu-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #FFF;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%); }
+    .menu-icon span::before, .menu-icon span::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #FFF;
+      -webkit-transform: translateY(-6px);
+          -ms-transform: translateY(-6px);
+              transform: translateY(-6px);
+      -webkit-transition: -webkit-transform 15s;
+              transition: transform 15s; }
+    .menu-icon span::after {
+      -webkit-transform: translateY(6px);
+          -ms-transform: translateY(6px);
+              transform: translateY(6px); }
+  .menu-icon:hover span::before {
+    -webkit-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+            transform: translateY(-8px); }
+  .menu-icon:hover span::after {
+    -webkit-transform: translateY(8px);
+        -ms-transform: translateY(8px);
+            transform: translateY(8px); }
+
+.menu-icon-cross {
+  -webkit-transition: -webkit-transform 15s;
+          transition: transform 15s; }
+  .menu-icon-cross span::before, .menu-icon-cross span::after {
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%; }
+  .menu-icon-cross span {
+    z-index: 2;
+    -webkit-transition: background 15s, -webkit-transform 15s;
+            transition: background 15s, transform 15s; }
+  .menu-icon-cross svg {
+    position: relative;
+    z-index: 1;
+    fill: #052b23;
+    stroke-width: 1px;
+    stroke: #FFF;
+    stroke-dasharray: 170;
+    stroke-dashoffset: 170;
+    -webkit-transition: stroke-dashoffset 15s, -webkit-transform 15s;
+            transition: stroke-dashoffset 15s, transform 15s; }
+  .menu-icon-cross.is-opened {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
+    .menu-icon-cross.is-opened span {
+      background: transparent; }
+    .menu-icon-cross.is-opened span::before {
+      -webkit-transform: translateY(0) rotate(45deg);
+          -ms-transform: translateY(0) rotate(45deg);
+              transform: translateY(0) rotate(45deg); }
+    .menu-icon-cross.is-opened span::after {
+      -webkit-transform: translateY(0) rotate(-45deg);
+          -ms-transform: translateY(0) rotate(-45deg);
+              transform: translateY(0) rotate(-45deg); }
+    .menu-icon-cross.is-opened svg {
+      -webkit-transform: rotate(-180deg);
+          -ms-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      stroke-dashoffset: 0; }
+
+.menu-icon-arrow {
+  -webkit-transition: -webkit-transform 15s;
+          transition: transform 15s; }
+  .menu-icon-arrow span::before, .menu-icon-arrow span::after {
+    right: 0;
+    left: auto;
+    -webkit-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+            transform-origin: 100% 50%; }
+  .menu-icon-arrow span, .menu-icon-arrow span::after, .menu-icon-arrow span::before {
+    z-index: 2;
+    -webkit-transition: -webkit-transform 15s, width 15s;
+            transition: transform 15s, width 15s; }
+  .menu-icon-arrow svg {
+    position: relative;
+    z-index: 1;
+    fill: #052b23;
+    stroke-width: 1px;
+    stroke: #FFF;
+    stroke-dasharray: 170;
+    stroke-dashoffset: 170;
+    -webkit-transition: stroke-dashoffset 15s;
+            transition: stroke-dashoffset 15s; }
+  .menu-icon-arrow.is-opened {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
+    .menu-icon-arrow.is-opened span::before {
+      width: 50%;
+      -webkit-transform: translateY(0) rotate(45deg);
+          -ms-transform: translateY(0) rotate(45deg);
+              transform: translateY(0) rotate(45deg); }
+    .menu-icon-arrow.is-opened span::after {
+      width: 50%;
+      -webkit-transform: translateY(0) rotate(-45deg);
+          -ms-transform: translateY(0) rotate(-45deg);
+              transform: translateY(0) rotate(-45deg); }
+    .menu-icon-arrow.is-opened svg {
+      stroke-dashoffset: 0; }
+
+.menu-icon-svg span {
+  -webkit-transition: background 15s steps(1, end);
+          transition: background 15s steps(1, end); }
+.menu-icon-svg span::before, .menu-icon-svg span::after {
+  -webkit-transform-origin: 100% 50%;
+      -ms-transform-origin: 100% 50%;
+          transform-origin: 100% 50%; }
+.menu-icon-svg svg {
+  opacity: 0;
+  fill: transparent;
+  stroke-width: 2px;
+  stroke: #FFF;
+  stroke-dasharray: 22 230;
+  -webkit-transition: stroke-dasharray 15s, stroke-dashoffset 15s, opacity 15s steps(1, end);
+          transition: stroke-dasharray 15s, stroke-dashoffset 15s, opacity 15s steps(1, end); }
+.menu-icon-svg.is-opened span {
+  -webkit-transition: background 15s steps(1, start);
+          transition: background 15s steps(1, start);
+  background-color: transparent; }
+.menu-icon-svg.is-opened span::before {
+  -webkit-transform: translateX(-3px) translateY(-8px) rotate(-45deg);
+      -ms-transform: translateX(-3px) translateY(-8px) rotate(-45deg);
+          transform: translateX(-3px) translateY(-8px) rotate(-45deg); }
+.menu-icon-svg.is-opened span::after {
+  -webkit-transform: translateX(-3px) translateY(8px) rotate(45deg);
+      -ms-transform: translateX(-3px) translateY(8px) rotate(45deg);
+          transform: translateX(-3px) translateY(8px) rotate(45deg); }
+.menu-icon-svg.is-opened svg {
+  opacity: 1;
+  -webkit-transition: opacity 15s steps(1, start);
+          transition: opacity 15s steps(1, start);
+  -webkit-animation: pathanimation 15s linear;
+          animation: pathanimation 15s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+.menu-icon-svg.is-closed svg {
+  -webkit-animation: pathanimation-out 15s linear;
+          animation: pathanimation-out 15s linear; }
+
+@-webkit-keyframes pathanimation {
+  40% {
+    stroke-dasharray: 22 230; }
+
+  60% {
+    stroke-dashoffset: -65; }
+
+  100% {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 160; } }
+
+@keyframes pathanimation {
+  40% {
+    stroke-dasharray: 22 230; }
+
+  60% {
+    stroke-dashoffset: -65; }
+
+  100% {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 160; } }
+
+@-webkit-keyframes pathanimation-out {
+  100% {
+    stroke-dashoffset: 0; }
+
+  60% {
+    stroke-dasharray: 22 230; }
+
+  40% {
+    stroke-dashoffset: -65; }
+
+  0% {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 160; } }
+
+@keyframes pathanimation-out {
+  100% {
+    stroke-dashoffset: 0; }
+
+  60% {
+    stroke-dasharray: 22 230; }
+
+  40% {
+    stroke-dashoffset: -65; }
+
+  0% {
+    stroke-dashoffset: -65;
+    stroke-dasharray: 160; } }

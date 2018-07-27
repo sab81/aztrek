@@ -1,0 +1,8 @@
+.idea/
+.nbproject/
+/nbproject/private/
+admin/node_modules/
+*.bak
+uploads/
+config/parameters.php
+_*

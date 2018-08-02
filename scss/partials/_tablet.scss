@@ -1,0 +1,63 @@
+
+header {
+
+    .logo {
+        display: none;  
+    }
+}
+.owl-carousel {
+    .item {
+        flex-direction: row;
+        .item-infos {
+            flex-basis: 33.33%;
+        }
+        .item-img {
+            flex-basis: 66.66%;
+            padding-left: 30px;
+        }
+    }
+}
+
+
+
+.main-nav{
+    background-color: transparent;
+    display: block;
+
+    .menu.icon {
+        display: none;
+    }
+    .logo{
+        background-color: #fff;
+        background: url(../images/logo-noir.png)no-repeat no-repeat;
+        display: flex;
+    }
+    .main-first-nav{
+        background-color: $green;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .main-menu{
+        display: flex;
+        a {
+                    display: block;
+                    
+                    color: #fff;
+                    padding: 1rem;
+                    margin: 0 1rem;
+            
+                    &:hover, &:focus {
+                        color: lighten($color: $brown, $amount: 20%);
+            
+                }
+            }
+    }
+}
+
+
+
+
+.section6 {
+    display: none;
+}
+

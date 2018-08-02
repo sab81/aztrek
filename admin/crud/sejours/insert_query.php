@@ -5,11 +5,12 @@ require_once '../../../model/database.php';
 
 // recuperation des données du formulaire
 $titre = $_POST["titre"];
-$date_debut = $_POST["date_debut"];
-$date_fin = $_POST["date_fin"];
-$prix = $_POST["prix"];
-$description = $_POST["description"];
-$categorie_id = $_POST["categorie_id"];
+$description_courte = $_POST["description_courte"];
+$coup_de_coeur = $_POST["coup_de_coeur"];
+$image = $_POST["image"];
+$description_longue = $_POST["description_longue"];
+$duree = $_POST["duree"];
+$pays_id = $_POST["pays_id"];
 
 // upload de l'image
 $image = $_FILES["image"] ["name"];
@@ -19,7 +20,8 @@ move_uploaded_file($tmp,"../../../uploads/" . $image);
 
 
 // Enregistrement en base de données
-insertProjet($titre, $image, $date_debut, $date_fin, $prix, $description, $categorie_id);
+insertSejour($titre, $image, $description_courte, $coup_de_coeur, $description_longue, $duree, $pays_id);
+
 
 
 // Redirection vers la liste

@@ -51,10 +51,24 @@ body {
   margin: 0 auto;
   padding: 0 15px; }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px; }
+  .grid img {
+    width: 400px;
+    height: 300px; }
+  .grid h2 {
+    text-align: center;
+    color: #0C4418; }
+
 h1,
 h2,
 h3 {
   font-family: "caveat", "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: 2em;
   font-weight: normal;
   color: brown; }
 
@@ -88,6 +102,14 @@ figure {
   display: flex;
   background-color: black;
   justify-content: space-between; }
+
+.cta_social ul.inline-list {
+  padding: 0;
+  list-style-type: none; }
+.cta_social ul.inline-list li {
+  display: inline-block; }
+.cta_social a {
+  color: #0C4418; }
 
 .socialnav {
   display: flex;
@@ -329,7 +351,8 @@ figure {
 footer {
   background-color: #0C4418;
   color: #fff;
-  padding: 30px; }
+  padding: 30px;
+  margin-top: 50px; }
   footer .footer-foot .footer-menu {
     display: flex;
     justify-content: space-evenly; }
@@ -358,6 +381,74 @@ footer {
 
 .section6 {
   display: none; }
+
+/*====================
+!!!!!!!!!SEJOURS!!!!!!!!
+=====================*/
+.actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+
+.action {
+  position: relative;
+  overflow: hidden;
+  margin-top: 50Px;
+  height: 250px; }
+
+.action img {
+  height: 100%; }
+
+.action .overlay {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  transition: 0.5s;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.75) 100%); }
+
+.action:hover .overlay {
+  bottom: 0; }
+
+.action .overlay .info {
+  padding: 0 10px; }
+
+.action .overlay .info h3 {
+  margin: 10px 0;
+  color: white; }
+
+.action .overlay .more-info {
+  background-color: #89BD46;
+  color: white;
+  font-size: 0.8em;
+  display: flex; }
+
+.action .overlay .more-info .action-info {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 30px; }
+
+.action .overlay .more-info .action-info i.fa {
+  opacity: 0.5; }
+
+.col-actions {
+  width: 100px; }
+
+.col-actions form {
+  float: left;
+  margin-right: 5px; }
+
+.img-thumbnail {
+  width: 100px;
+  max-height: 100px; }
+
+.pays p {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding: 5px;
+  font-size: 20px;
+  margin: auto; }
 
 @media only screen and (min-width: 768px) {
   header .logo {

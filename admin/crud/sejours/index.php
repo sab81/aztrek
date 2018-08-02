@@ -1,12 +1,12 @@
 <?php 
 require_once '../../../model/database.php';
 
-$list_projets = getAllProjects();
+$liste_sejours = getAllSejours();
 
 require_once '../../layout/header.php'; 
 ?>
 
-<h1>Gestion des projets</h1>
+<h1>Gestion des sejours</h1>
 
 <a href="insert_form.php" class="btn btn-primary">Ajouter</a>
 
@@ -16,32 +16,35 @@ require_once '../../layout/header.php';
     <thead>
         <tr>
             <th>Titre</th>
-            <th>Date de début</th>
-            <th>Catégorie</th>
+            <th>Pays</th>
+            <th>Description</th>
             <th>Photo</th>
-            <th>Coût</th>
-            <th>Actions</th>
+            <th>durée</th>
+            
+            
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($list_projets as $projet) : ; ?>
+        <?php foreach ($liste_sejours as $sejour) : ; ?>
         <tr>
-            <td><?php echo $projet["titre"]; ?></td>
-            <td><?php echo $projet["date_debut_format"]; ?></td>
-            <td><?php echo $projet["categorie"]; ?></td>
+            <td><?php echo $sejour["titre"]; ?></td>
+            <td><?php echo $sejour["pays"]; ?></td>
+            <td><?php echo $sejour["description_longue"]; ?></td>
             <td>
-                <img src="<?php echo SITE_URL . "/uploads/" .$projet["image"]; ?>" class="img-thumbnail">
+                <img src="<?php echo SITE_URL . "/uploads/" .$sejour["image"]; ?>" class="img-thumbnail">
             </td>
-            <td><?php echo $projet["prix_format"]; ?></td>
+            <td><?php echo $sejour["duree"]; ?></td>
+             
+            
             <td class="col-actions">
                 <form action="delete_query.php" method="POST" class="form-delete">
-                    <input type="hidden" name="id" value="<?php echo $projet["id"]; ?>">
+                    <input type="hidden" name="id" value="<?php echo $sejour["id"]; ?>">
                     <button type="submit" class="btn btn-danger" title="Supprimer">
                         <i class="fa fa-trash"></i>
                     
                     </button>
                     </form>
-                <a href="update_form.php?id=<?php echo $projet["id"]; ?>" class="btn btn-warning">
+                <a href="update_form.php?id=<?php echo $sejour["id"]; ?>" class="btn btn-warning">
                 <i class="fa fa-edit"></i>
                 </a>
             </td>
